@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'api_url' => 'https://naturecarboncoin.lu',
+    'api_url' => 'http://localhost:8000',
 ];

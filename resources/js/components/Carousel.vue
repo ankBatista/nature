@@ -119,6 +119,8 @@
 import axios from 'axios'
 
 export default {
+    name: 'CarouselComponent',
+
     data() {
         return {
             urlBase: window.customConfig.api_url + '/api/v1/index', //Este endereço esta em config/custom.php

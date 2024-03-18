@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import Carousel from "./Carousel.vue";
+import CarouselComponent from "./Carousel.vue";
 import UpdatesComponent from "./UpdatesComponent.vue";
 import TeamComponent from "./TeamComponent.vue";
 import Testimonial from "./TestimonialComponent.vue";
@@ -51,7 +51,7 @@ import Testimonial from "./TestimonialComponent.vue";
 
 export default {
     components: {
-        Carousel,
+        CarouselComponent,
         UpdatesComponent,
         TeamComponent,
         Testimonial,
