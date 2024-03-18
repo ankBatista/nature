@@ -73,7 +73,7 @@ axios.interceptors.response.use(
         if(error.response.status == 401 && error.response.data.message == 'Token has expired') {
             console.log('Fazer uma nova requisição para rota refresh')
 
-            axios.post('http://localhost:8000/api/refresh')
+            axios.post(window.customConfig.api_url+'/api/refresh')
                 .then(response => {
                     console.log('Refresh com sucesso: ', response)
 

@@ -69,7 +69,8 @@
         methods: {
             login(e) {
 
-                let url = 'http://127.0.0.1:8000/api/login'
+
+                let url = window.customConfig.api_url+'/api/login' //Este endereço esta em config/custom.php
                 let configuracao = {
                     method: 'post',
                     body: new URLSearchParams({

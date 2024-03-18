@@ -70,7 +70,7 @@
 export default {
     data() {
         return {
-            urlBase: 'http://127.0.0.1:8000/api/v1/index',
+            urlBase: window.customConfig.api_url+'/api/v1/index',
             items: []
         }
     },
@@ -100,6 +100,32 @@ export default {
                 }
             }
         });
+
+        $('#testimonial-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        center: false,
+        autoplay: true,
+        smartSpeed: 500,
+        nav: false,
+        navText: ['<i class="fa fa-caret-left"></i>', '<i class="fa fa-caret-right"></i>'],
+        dots: true,
+        responsive : {
+            0 : {
+                items: 1
+            },
+            480 : {
+                items: 1,
+            },
+            768 : {
+                items: 1,
+            },
+            992 : {
+                items: 2,
+            }
+        }
+    });
+
     }
 
 }

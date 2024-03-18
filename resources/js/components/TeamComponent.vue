@@ -80,7 +80,7 @@
 export default {
     data() {
         return {
-            urlBase: 'http://127.0.0.1:8000/api/v1/index',
+            urlBase: window.customConfig.api_url+'/api/v1/index', //Este endereço esta em config/custom.php
             items: []
         }
     },

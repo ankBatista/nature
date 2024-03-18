@@ -48,6 +48,11 @@
 
     <script src="{{ asset('js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }}"></script>
 
+    <script>
+        window.customConfig = @json(config('custom')); //Esta é uma referencia ao endereço 'config/custom.php'
+    </script>
+
+
 
 </head>
 
@@ -66,50 +71,19 @@
                             <ul class="nav">
 
                                 <li>
-                                    <a data-scroll class="nav-link active" href="index.html">Home<span class="sr-only">(current)</span></a>
-                                    <ul>
-                                        <li><a href="{{ url('/index') }}">Home Default</a></li>
-                                        <li><a href="{{ url('/index') }}">Home Modern</a></li>
-                                        <li><a href="{{ url('/index') }}">Home Classic</a></li>
-                                        <li><a href="{{ url('/index') }}">Home Dark</a></li>
-                                        <li><a href="{{ url('/index') }}">Home Video Bg</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">About</a>
-                                    <ul>
-                                        <li><a href="about-us.html">About Us</a></li>
-                                        <li><a href="about-company.html">About Company</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Services</a>
-                                    <ul>
-                                        <li><a href="services-1.html">Services 01</a></li>
-                                        <li><a href="services-2.html">Services 02</a></li>
-                                        <li><a href="services-3.html">Services 03</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Projects</a>
-                                    <ul>
-                                        <li><a href="projects.html">All Projects</a></li>
-                                        <li><a href="project-single.html">Projects Single</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Pages</a>
-                                    <ul>
-                                        <li><a href="team.html">Our Team</a></li>
-                                        <li><a href="testimonial.html">Testimonial</a></li>
-                                        <li><a href="404.html">404 Error</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Blog</a>
-                                    <ul>
-                                        <li><a href="blog-grid.html">Blog Grid</a></li>
-                                        <li><a href="blog-classic.html">Blog Classic</a></li>
-                                        <li><a href="blog-single.html">Blog Single</a></li>
-                                    </ul>
+                                    <a data-scroll class="nav-link active" href="{{ url('/') }}">Home<span
+                                            class="sr-only">(current)</span></a>
                                 </li>
 
+                                <li>
+                                    <a data-scroll class="nav-link" href="{{ url('/index') }}">About<span
+                                            class="sr-only">(current)</span></a>
+                                </li>
 
+                                <li>
+                                    <a data-scroll class="nav-link" href="{{ url('/index') }}">Faça Parte<span
+                                            class="sr-only">(current)</span></a>
+                                </li>
 
 
                                 @guest
@@ -124,23 +98,19 @@
                                         </li>
                                     @endif
                                 @else
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"
-                                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                            v-pre>
-                                            {{ Auth::user()->name }}
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
+                                    <li><a href="#"> {{ Auth::user()->name }}</a>
+                                        <ul>
+                                            <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                class="d-none">
-                                                @csrf
-                                            </form>
-                                        </div>
+                                                    {{ __('Logout') }}
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </li>
+                                        </ul>
                                     </li>
                                 @endguest
                             </ul>
@@ -188,8 +158,7 @@
     <!-- Wow JS -->
     <script src="{{ asset('js/vendor/wow.min.js') }}"></script>
     <!-- Google Map JS -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPH8h1UpcK01BdcvoZeOzq-_wJqRxN1Pc">
-    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPH8h1UpcK01BdcvoZeOzq-_wJqRxN1Pc"></script>
     <!-- Main JS -->
     <script src="{{ asset('js/main.js') }}"></script>
 
